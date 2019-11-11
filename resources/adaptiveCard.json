@@ -1,0 +1,67 @@
+﻿{
+	"type": "AdaptiveCard",
+	"body": [
+		{
+			"type": "TextBlock",
+			"size": "Large",
+			"weight": "Bolder",
+			"text": "$title"
+		},
+		{
+			"type": "ColumnSet",
+			"columns": [
+				{
+					"type": "Column",
+					"items": [
+						{
+							"type": "Image",
+							"url": "$image",
+							"size": "Large",
+							"width": "200px",
+							"height": "200px"							
+						},
+						{
+							"type": "TextBlock",
+							"weight": "Bolder",
+							"text": "Author name: $authorName",
+							"wrap": true,
+							"size": "small"
+						},
+						{
+							"type": "TextBlock",
+							"spacing": "None",
+							"text": "Created:  $date",
+							"isSubtle": true,
+							"wrap": true,
+							"size": "small"
+						}
+					],
+					"width": "stretch"
+				}
+			]
+		}
+	],
+	"actions": [
+		{
+			"type": "Action.Submit",
+			"title": "Description",
+			"data": {
+				"description": "$description",
+				"id": "$id_description",
+				"author": "$authorName",
+				"author_id": "$author_id"
+			}
+		},
+		{
+			"type": "Action.Submit",
+			"title": "More cards of this author",
+			"data": {
+				"author": "$authorName",
+				"author_id": "$author_id",
+				"id": "$id_authotCard"
+			}
+		}
+	],
+	"$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+	"version": "1.0"
+}
